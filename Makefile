@@ -7,12 +7,7 @@ export BUILD_OUT := $(PWD)/out
 export LOCALVERSION := -tegra
 export CROSS_COMPILE := $(TOOLCHAIN_DIR)/bin/aarch64-linux-gnu-
 
-ifeq ($(wildcard $(BUILD_OUT)/.config),)
-  MAKE_DEFCONFIG_OBJ = defconfig
-endif
-
-
-all: $(MAKE_DEFCONFIG_OBJ)
+all:
 	@make -C $(KERNEL_SRC) ARCH=arm64 O=$(BUILD_OUT)
 
 defconfig:

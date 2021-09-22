@@ -1,0 +1,1 @@
+obj-y += dog.o
